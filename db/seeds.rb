@@ -22,14 +22,17 @@ f20 = Flight.create :date => '2017/11/17', :origin => "Adelaide", :destination =
 
 User.destroy_all
 u1 = User.create :name => 'Hermano'
+u2 = User.create :name => 'Rodrigo'
 
 Reservation.destroy_all
-r1 = Reservation.create :seat_row => 3, :seat_column => 7
+r1 = Reservation.create :seat_row => 3, :seat_column => 2
+r2 = Reservation.create :seat_row => 7, :seat_column => 0
 
 Airplane.destroy_all
 a1 = Airplane.create :name => "747", :num_rows => 24, :num_columns => 4
 a2 = Airplane.create :name => "767", :num_rows => 28, :num_columns => 6
 
 a1.flights << f1 << f2 << f3 << f4 << f5 << f6 << f7 << f8 << f9 << f10 << f11 << f12 << f13 << f14 << f15 << f16 << f17 << f18 << f19 << f20
-f1.reservations << r1
+f1.reservations << r1 << r2
 u1.reservations << r1
+u2.reservations << r2
